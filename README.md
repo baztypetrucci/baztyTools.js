@@ -6,7 +6,7 @@ Plugin de jQuery para poder utilizar el atributo placeholder en IE6.
 
 ### Basics
 <pre lang="javascript"><code>
-$.baztyTools({
+$.ie6Placeholder({
 	placeholder:true
 });
 </code></pre>
