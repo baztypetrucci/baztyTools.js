@@ -15,22 +15,23 @@ jQuery.extend({
 			jQuery('input[type="text"],input[type="password"]').each(function(k, v) {
 				var place = jQuery(v).attr('placeholder'),
 				color = jQuery(v).css('color');
-
-				if (jQuery(v).val() == '') {
-					jQuery(v).val(place);
-					jQuery(v).css('color', '#999');
-				}
-				jQuery(v).focus(function() {
-					if (jQuery(this).val() == place)
-					jQuery(v).val('');
-					jQuery(v).css('color', color);
-				});
-				jQuery(v).blur(function() {
-					if (jQuery(this).val() == '') {
+				if(place.length > 0 ){
+					if (jQuery(v).val() == '') {
 						jQuery(v).val(place);
 						jQuery(v).css('color', '#999');
 					}
-				});
+					jQuery(v).focus(function() {
+						if (jQuery(this).val() == place)
+						jQuery(v).val('');
+						jQuery(v).css('color', color);
+					});
+					jQuery(v).blur(function() {
+						if (jQuery(this).val() == '') {
+							jQuery(v).val(place);
+							jQuery(v).css('color', '#999');
+						}
+					});
+				}
 			});
 		}
 	}
